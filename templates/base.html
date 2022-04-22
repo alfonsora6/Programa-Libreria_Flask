@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	{% block title %}
+    <title>
+        Biblioteca
+    </title>
+    {% endblock %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../static/css/magnific-popup.min.css" rel="stylesheet">
+    <link href="../static/css/tooplate-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="tm-container-fluid">
+		<section class="tm-mb-80 tm-p-50 tm-bgcolor-2 tm-border-rounded">
+				{% block contenido %}{% endblock %}
+		</section>
+
+		<footer class="tm-footer">
+			Proyecto Librería (Flask) - Lenguaje de Marcas | 1º ASIR | <a href="https://github.com/alfonsora6">Alfonso Roldán Amador</a>
+		</footer>
+	</div>
+</body>
+</html>
