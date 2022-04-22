@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Categoría: {{categoria}}</title>
+{% endblock %}
+{% block contenido %}
+    <h1>{{categoria}}</h1>
+    <h3>Libros que se encuentran en la categoría "{{categoria}}"</h3>
+        {% for libro in datos %}
+            {% if categoria in libro.categories %}
+                <ul>
+                    <li>{{libro.title}}</li>
+                </ul>
+            {% endif %}
+        {% endfor -%}
+{% endblock %}

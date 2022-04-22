@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Biblioteca</title>
+{% endblock %}
+
+{% block contenido %}
+<div class="tm-flex-center">
+    <h1>Alfonso Roldán Amador</h1>
+    <h2>Biblioteca</h2>
+    <ul>
+        {% for titulo in datos %}
+            <li><a href="/libro/{{titulo.isbn}}">{{titulo.title}}</a></li>
+        {% endfor -%}
+    </ul>
+</div>
+{% endblock %}

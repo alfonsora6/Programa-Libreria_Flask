@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% block title %}
+    <title>Libro: {{libro.title}}</title>
+{% endblock %}
+{% block contenido %}
+    <h1>{{libro.title}}</h1>
+    <img src="{{libro.thumbnailUrl}}" alt="Portada_libro">
+    {% if "MEAP" in libro.status %}
+        <p>ESTE LIBRO NO SE HA PUBLICADO</p>
+    {% else %}
+        <p><strong>- Número de páginas:</strong> {{libro.pageCount}}</p>
+    <h3>Descripcion</h3>
+        {% if libro.shortDescription %}
+            <p>{{libro.shortDescription}}</p>
+        {% elif libro.longDescription %}
+            <p>{{libro.longDescription}}</p>
+        {% else %}
+            <p>Sin descripción</p>
+        {% endif %}
+    <h3>Autores</h3>
+        {% for autores in libro.authors %}
+            {% if autores %}
+                <ul>
+                    <li>{{autores}}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    <h3>Categorias</h3>
+        {% for categoria in libro.categories %}  
+            {% if categoria %}
+                <ul>
+                    <li><a href="/categorias/{{categoria}}">{{categoria}}</a></li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
