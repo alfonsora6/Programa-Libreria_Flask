@@ -12,12 +12,10 @@ def inicio():
 
 @app.route('/libro/<isbn>')
 def libro(isbn):
-    try:
-        for libro in datos:
-            if libro.get("isbn") == isbn:
-                return render_template("libro.html", libro=libro)
-    except:
-        return abort(404)
+    for libro in datos:
+        if libro.get("isbn") == isbn:
+            return render_template("libro.html", libro=libro)
+    return abort(404)
 
 @app.route('/categorias/<categoria>')
 def categorias(categoria):
