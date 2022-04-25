@@ -1,4 +1,3 @@
-from distutils.log import debug
 from flask import Flask, render_template, abort, request
 from funciones import *
 
