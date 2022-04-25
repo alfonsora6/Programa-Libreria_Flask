@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, request
 from funciones import *
+import os
 
 app = Flask(__name__)
 
@@ -20,4 +21,5 @@ def libro(isbn):
 def categorias(categoria):
     return render_template("categorias.html", datos=datos, categoria=categoria)
 
-app.run("0.0.0.0",5000,debug=True)
+port=os.environ["PORT"]
+app.run('0.0.0.0',int(port), debug=True)
